@@ -1,0 +1,37 @@
+name: 'Search and report the usage of string'
+description: 'Action searches for a particular string input and report the team with output'
+author: 'Vineeth Venugopal'
+inputs:
+  search-string:
+    required: true
+    description: 'Provide the string to search. Search will be performed in all the repositories in specified Scope'
+  file-name-pattern:
+    required: false
+    description: 'Search will be performed in the files matching with provided pattern'
+  file-path-pattern:
+    required: false
+    description: 'Search will be performed in the directories matching with provided pattern'
+  language:
+    required: false
+    description: 'Search for code based on what language it is written in'
+  extension:
+    required: false
+    description: 'Search will be performed in the files with specified extension'        
+  organization: 
+    required: false
+    description: 'Provide the target user. Search will be performed in all the repositories of specified organization'
+  user:
+    required: false
+    description: 'Provide the target user. Search will be performed in all the repositories of specified user'
+  repository:
+    required: false
+    description: 'Provide the target repo. Search will be performed in the specified repo'
+  token:
+    required: false
+    description: 'GitHub Authentication token. All public repos will be scanned if the value not provided'
+  notifyTo:
+    required: false
+    description: 'Send the notification to mentioned users/teams. Comma seperated values'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

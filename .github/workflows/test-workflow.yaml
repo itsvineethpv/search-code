@@ -1,0 +1,17 @@
+name: 'Test the action'
+on: workflow_dispatch
+  
+jobs:
+  search-string:
+    name: 'Search for a string'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ./
+      with:
+        search-string: 'deployment '
+        organization: 'github'
+        file-name-pattern: 'main.js'
+        file-path-pattern: 'src'
+        extension: 'js'
+        notifyTo: 'itsvineethpv,pv-vineeth/team-owners.'
